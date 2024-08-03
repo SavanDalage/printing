@@ -32,37 +32,35 @@ body {
   color: var(--color-main) !important;
 }
 
-/* Custom Scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+/* Chrome, Safari, etc. */
 .wrapper::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
-  background-color: black; /* Background of the scrollbar track */
+  width: 12px;
+  background-color: black;
 }
 
 .wrapper::-webkit-scrollbar-thumb {
-  background-color: var(
-    --color-main
-  ); /* Color of the scroll position indicator */
-  border-radius: 6px; /* Rounding the scroll indicator edges */
+  background-color: var(--color-main);
+  border-radius: 6px;
 }
 
 .wrapper::-webkit-scrollbar-track {
-  background-color: black; /* Background of the scrollbar track */
+  background-color: black;
 }
 
 .wrapper::-webkit-scrollbar-button {
-  background-color: var(--color-main); /* Color of the up/down arrows */
-  height: 16px; /* Height of the up/down arrows */
+  background-color: var(--color-main);
+  height: 16px;
 }
 
-/* Custom Scrollbar for Firefox */
+/* Firefox */
 .wrapper {
-  scrollbar-width: thin; /* 'auto', 'thin', or 'none' */
-  scrollbar-color: var(--color-main) black; /* thumb color and track color */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-main) black;
 }
 
-/***********************************/
-/************** HEADER *************/
-/***********************************/
+/* ********************************* */
+/* ************* HEADER ************ */
+/* ********************************* */
 
 .header {
   display: flex;
@@ -115,9 +113,9 @@ body {
   scale: 1.2;
 }
 
-/***********************************/
-/********** STRONA GŁOWNA **********/
-/***********************************/
+/* ********************************* */
+/* ********* STRONA GŁOWNA ********* */
+/* ********************************* */
 
 .start {
   height: 100%;
@@ -158,9 +156,9 @@ body {
   opacity: 1;
 }
 
-/***********************************/
-/************** USŁUGI *************/
-/***********************************/
+/* ********************************* */
+/* ************* USŁUGI ************ */
+/* ********************************* */
 
 .uslugi {
   position: relative;
@@ -206,11 +204,15 @@ body {
   border: 1px solid var(--color-main);
 }
 
-.image-left,
+.image-left {
+  height: 300px;
+  width: 300px;
+  background-image: url("../img/01r.jpg");
+}
 .image-right {
   height: 300px;
   width: 300px;
-  background-color: white;
+  background-image: url("../img/02r.jpg");
 }
 
 ul {
