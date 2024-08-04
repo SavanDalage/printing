@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --color-main: #d90a2c;
+}
+
+body {
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  height: 100dvh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+/* Chrome, Safari, etc. */
+.galeria::-webkit-scrollbar {
+  width: 12px;
+  background-color: black;
+}
+
+.galeria::-webkit-scrollbar-thumb {
+  background-color: var(--color-main);
+  border-radius: 6px;
+}
+
+.galeria::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+.galeria::-webkit-scrollbar-button {
+  background-color: var(--color-main);
+  height: 16px;
+}
+
+/* Firefox */
+.galeria {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-main) black;
+}
+
+/* ********************************* */
+/* ************* HEADER ************ */
+/* ********************************* */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  height: 86px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+  border-bottom: 1px solid var(--color-main);
+}
+
+.header img {
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.button {
+  color: white;
+  width: 100px;
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: scale 0.2s ease-in-out;
+}
+
+.button:hover {
+  scale: 1.2;
+}
+
+/* ********************************* */
+/* ************* GALERIA *********** */
+/* ********************************* */
+
+.galeria {
+  padding-top: 86px;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+
+  overflow: scroll;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+.headline {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 52px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  padding: 60px 0 10px 0;
+  font-size: 36px;
+  color: white;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exampels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.exampels img {
+  height: 200px;
+  width: 200px;
+}
+
+.single {
+  /* display: flex; */
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: black;
+  z-index: 1;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 86px;
+  width: 80%;
+  height: 80%;
+
+}
+
+.img-enlarged {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visible {
+  display: flex !important;
+}

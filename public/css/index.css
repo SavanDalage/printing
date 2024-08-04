@@ -89,6 +89,17 @@ body {
   font-size: 20px;
   margin-right: 20px;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: scale 0.2s ease-in-out;
+}
+
+.button:hover {
+  scale: 1.2;
+}
+
+.button-gal:hover {
+  scale: 1.2;
 }
 
 .highlighted {
@@ -207,12 +218,12 @@ body {
 .image-left {
   height: 300px;
   width: 300px;
-  background-image: url("../img/01r.jpg");
+  /* background-image: url("../img/uslugi/01r.jpg"); */
 }
 .image-right {
   height: 300px;
   width: 300px;
-  background-image: url("../img/02r.jpg");
+  /* background-image: url("../img/uslugi/02r.jpg"); */
 }
 
 ul {
@@ -220,12 +231,18 @@ ul {
   padding-top: 10px;
   width: 300px;
   padding: 10px;
+  cursor: pointer;
 }
 
 li {
   color: white;
   padding: 10px 10px;
   text-align: left;
+  transition: scale 0.3s linear;
+}
+
+li:hover {
+  scale: 1.05;
 }
 
 /***********************************/
@@ -401,7 +418,7 @@ li {
   }
 
   .uslugi-text {
-    padding: 0 5px;
+    padding: 0 10px;
   }
 
   .kontakt-box {

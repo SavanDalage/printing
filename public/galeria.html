@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Improve - galeria</title>
+
+    <link rel="stylesheet" href="./css/galeria.css" />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <img src="./img/logo.png" class="logo" alt="logo" />
+      <p>&nbsp</p>
+
+      <div class="button" type="button" onclick="history.back()">Wróć</div>
+    </header>
+
+    <div class="galeria">
+      <h1 class="headline">GALERIA</h1>
+
+      <div class="photos">
+        <h2>Zdobienie tekstyliów</h2>
+        <div class="exampels">
+          <img class="gal-img" src="./img/galeria/z01.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/z02.jpg" alt="" />
+        </div>
+        <h2>Witryny</h2>
+        <div class="exampels">
+          <img class="gal-img" src="./img/galeria/w01.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/w02.jpeg" alt="" />
+          <img class="gal-img" src="./img/galeria/w03.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/w04.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/w05.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/w06.jpeg" alt="" />
+          <img class="gal-img" src="./img/galeria/w07.jpeg" alt="" />
+          <img class="gal-img" src="./img/galeria/w08.jpeg" alt="" />
+        </div>
+        <h2>Druki</h2>
+        <div class="exampels">
+          <img class="gal-img" src="./img/galeria/d01.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/d02.jpg" alt="" />
+          <img class="gal-img" src="./img/galeria/d03.jpg" alt="" />
+        </div>
+      </div>
+      <div class="single"></div>
+    </div>
+
+    <div class="single" id="single" onclick="document.getElementById(`single`).classList.remove(`visible`)">
+      <div class="container">
+        <img class="img-enlarged" id="img-enlarged"/>
+      </div>
+    </div>
+  </body>
+
+  <script src="./js/galeria.js"></script>
+</html>

@@ -20,7 +20,7 @@
       <p>&nbsp</p>
       <div class="button highlighted">Start</div>
       <div class="button">Usługi</div>
-      <div class="button-gal bold">Galeria</div>
+      <a class="button-gal bold" type="button" href="galeria.html"> Galeria </a>
       <div class="button">O nas</div>
       <div class="button">Kontakt</div>
     </header>
@@ -47,18 +47,18 @@
           </p>
           <div class="uslugi-rodzaje">
             <div class="uslugi-left">
-              <div class="image-left"></div>
+              <div class="image-left" ><img id="image-left" src="./img/uslugi/01r.jpg"/></div>
               <ul>
-                <li>Wydruki reklamowe</li>
+                <li onclick="document.getElementById('image-left').src='./img/uslugi/02r.jpg'">Wydruki reklamowe</li>
                 <li>Projekty graficzne</li>
                 <li>Folie przeciwsłoneczne</li>
-                <li>Znakowanie odzieży</li>
+                <li onclick="document.getElementById('image-left').src='./img/uslugi/01r.jpg'">Znakowanie odzieży</li>
               </ul>
             </div>
             <div class="uslugi-right">
-              <div class="image-right"></div>
+              <div class="image-right" ><img id="image-right" src="./img/uslugi/02r.jpg"/></div>
               <ul>
-                <li>Reklama na witrynach</li>
+                <li onclick="document.getElementById('image-right').src='./img/uslugi/02r.jpg'">Reklama na witrynach</li>
                 <li>Naklejki/Etykiety</li>
                 <li>Kasetony podświetlane</li>
                 <li>Litery podświetlane (LED)</li>
