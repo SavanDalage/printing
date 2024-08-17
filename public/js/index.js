@@ -156,7 +156,7 @@ function sanitizeInput(input) {
 const dialog = document.querySelector("dialog");
 const showDialog = document.querySelector(".napisz");
 const closeDialog = document.querySelector(".zamknij");
-const form = document.getElementById(".napisz-do-nas");
+const form = document.getElementById("napisz-do-nas");
 
 showDialog.addEventListener("click", () => {
   dialog.showModal();
