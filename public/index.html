@@ -14,9 +14,35 @@
     <title>Studio Improve</title>
 
     <link rel="stylesheet" href="./css/index.css" />
-    
   </head>
   <body>
+    <div class="napisz">Napisz do nas</div>
+
+    <dialog class="form">
+      <form id="napisz-do-nas">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="telefon">Telefon:</label>
+        <input type="tel" id="telefon" name="phone" required />
+
+        <label for="cel">Wybierz temat:</label>
+        <select id="cel" name="cel" required>
+          <option value="naklejki">Naklejki</option>
+          <option value="oklejenia">Oklejenia witryn</option>
+          <option value="znakowanie">Znakowanie odzieży</option>
+          <option value="inne">Inny - opisz poniżej</option>
+        </select>
+
+        <label for="wiadomosc">Napisz co Cię interesuje:</label>
+        <textarea id="wiadomosc" name="wiadomosc" rows="5" required></textarea>
+        <div class="button-container">
+          <button class="button-form" type="submit">Wyślij</button>
+          <button class="button-form zamknij">Zamknij</button>
+        </div>
+      </form>
+    </dialog>
+
     <header id="header" class="header">
       <img src="./img/logo.png" class="logo" alt="logo" />
       <p>&nbsp</p>
@@ -29,7 +55,9 @@
     <div class="wrapper">
       <div class="section start" id="p1">
         <img src="./img/main.jpg" class="background" alt="" />
-        <div class="headline">STUDIO IMPROVE <br /><br />DRUKARNIA I STUDIO REKLAMY</div>
+        <div class="headline">
+          STUDIO IMPROVE <br /><br />DRUKARNIA I STUDIO REKLAMY
+        </div>
       </div>
 
       <div class="section uslugi" id="p2">
@@ -49,24 +77,57 @@
           </p>
           <div class="uslugi-rodzaje">
             <div class="uslugi-left">
-              <div class="image-left" ><img id="image-left" src="./img/uslugi/01r.jpg"/></div>
+              <div class="image-left">
+                <img id="image-left" src="./img/uslugi/01r.jpg" />
+              </div>
               <ul>
-                <li onclick="document.getElementById('image-left').src='./img/uslugi/02r.jpg'">Wydruki reklamowe</li>
+                <li
+                  onclick="document.getElementById('image-left').src='./img/uslugi/02r.jpg'"
+                >
+                  Wydruki reklamowe
+                </li>
                 <li>Projekty graficzne</li>
                 <li>Folie przeciwsłoneczne</li>
-                <li onclick="document.getElementById('image-left').src='./img/uslugi/01r.jpg'">Znakowanie odzieży</li>
+                <li
+                  onclick="document.getElementById('image-left').src='./img/uslugi/01r.jpg'"
+                >
+                  Znakowanie odzieży
+                </li>
               </ul>
             </div>
             <div class="uslugi-right">
-              <div class="image-right" ><img id="image-right" src="./img/uslugi/02r.jpg"/></div>
+              <div class="image-right">
+                <img id="image-right" src="./img/uslugi/02r.jpg" />
+              </div>
               <ul>
-                <li onclick="document.getElementById('image-right').src='./img/uslugi/02r.jpg'">Reklama na witrynach</li>
+                <li
+                  onclick="document.getElementById('image-right').src='./img/uslugi/02r.jpg'"
+                >
+                  Reklama na witrynach
+                </li>
                 <li>Naklejki/Etykiety</li>
                 <li>Kasetony podświetlane</li>
                 <li>Litery podświetlane (LED)</li>
                 <li>Druki reklamowe</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        <h2 class="klienci">SKORZYSTALI Z NASZYCH USŁUG</h2>
+
+        <div class="scroller">
+          <div class="inner-scroller">
+            <img src="./img/firmy/01.jpg" />
+            <img src="./img/firmy/02.jpg" />
+            <img src="./img/firmy/03.jpg" />
+            <img src="./img/firmy/04.jpg" />
+            <img src="./img/firmy/05.jpg" />
+            <img src="./img/firmy/06.jpg" />
+            <img src="./img/firmy/07.jpg" />
+            <img src="./img/firmy/08.jpg" />
+            <img src="./img/firmy/09.jpg" />
+            <img src="./img/firmy/10.jpg" />
           </div>
         </div>
       </div>
@@ -105,33 +166,38 @@
               <p class="text">ul.Willowa 8, 71-065 Szczecin</p>
             </div>
             <div class="kontakt-box-in">
-              <a href="https://www.facebook.com/ImproveAdamKwasniewski" target=”_blank”>
+              <a
+                href="https://www.facebook.com/ImproveAdamKwasniewski"
+                target="”_blank”"
+              >
                 <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="facebook 50"
-                viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="facebook 50"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/improvestudioreklamy/?igshid=YmMyMTA2Y%3D"
+                target="”_blank”"
               >
-                <path
-                  d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/improvestudioreklamy/?igshid=YmMyMTA2Y%3D" target=”_blank”>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="instagram 50"
-                viewBox="0 0 512 512"
-                
-              >
-                <path
-                  d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"
-                />
-                <path
-                  d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"
-                />
-              </svg>
-            </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="instagram 50"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"
+                  />
+                  <path
+                    d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>

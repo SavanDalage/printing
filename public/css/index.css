@@ -33,29 +33,169 @@ body {
 }
 
 /* Chrome, Safari, etc. */
-.wrapper::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
   width: 12px;
   background-color: black;
 }
 
-.wrapper::-webkit-scrollbar-thumb {
+.wrapper::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar {
   background-color: var(--color-main);
   border-radius: 6px;
 }
 
-.wrapper::-webkit-scrollbar-track {
+.wrapper::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar {
   background-color: black;
 }
 
-.wrapper::-webkit-scrollbar-button {
+.wrapper::-webkit-scrollbar-button,
+textarea::-webkit-scrollbar {
   background-color: var(--color-main);
   height: 16px;
 }
 
 /* Firefox */
-.wrapper {
+.wrapper,
+textarea {
   scrollbar-width: thin;
   scrollbar-color: var(--color-main) black;
+}
+
+/* ********************************* */
+/* ********* NAPISZ DO NAS ********* */
+/* ********************************* */
+
+.closed {
+  display: none;
+}
+
+dialog {
+  display: none;
+  animation: vanish 1s;
+}
+
+dialog[open] {
+  display: inline-block;
+  animation: appear 1s;
+}
+
+dialog[open]::backdrop {
+  display: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vanish {
+  from {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.napisz {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  padding: 10px 20px;
+  border: 1px solid var(--color-main);
+  background-color: rgb(0, 0, 0, 0.8);
+  z-index: 1000;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form {
+  color: white;
+  position: absolute;
+  margin: auto 2% 9% auto;
+  width: 700px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--color-main);
+  /* margin: 1rem auto; */
+
+  z-index: 1000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-main);
+  background-color: #222;
+  color: #fff;
+  outline: none;
+}
+
+textarea {
+  max-width: 600px;
+}
+
+fieldset {
+  border: 1px solid var(--color-main);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+legend {
+  color: var(--color-main);
+  padding: 0 10px;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button-form {
+  margin: 0 auto;
+  border: 1px solid var(--color-main);
+  width: 10rem;
+  height: 2rem;
+
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.button-form :hover {
+  background-color: var(--color-main);
+}
+
+.button-form :active {
+  color: black;
 }
 
 /* ********************************* */
@@ -200,7 +340,7 @@ body {
 }
 
 .uslugi-rodzaje {
-  padding: 100px 0 100px 0;
+  padding: 100px 0 50px 0;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -243,6 +383,69 @@ li {
 
 li:hover {
   scale: 1.05;
+}
+
+.klienci {
+  color: white;
+  padding: 10px 0 20px 0;
+}
+
+/* SCROLLER */
+
+.scroller {
+  margin: 0 auto 50px auto;
+  width: 90%;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+}
+
+.scroller[data-animated="true"] .inner-scroller {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 30s) linear infinite;
+}
+
+.inner-scroller {
+  display: flex;
+  padding-block: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.scroller img {
+  height: 130px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.scroller[data-animated="true"] .inner-scroller:hover {
+  animation-play-state: paused;
+}
+
+.scroller img:hover {
+  scale: 1.05;
+}
+
+.scroller:hover img:not(:hover) {
+  filter: grayscale(1);
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 1rem));
+  }
 }
 
 /***********************************/
@@ -399,6 +602,16 @@ li:hover {
   .uslugi-right,
   .uslugi-rodzaje {
     flex-direction: column;
+  }
+
+  .form {
+    width: 350px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .logo {

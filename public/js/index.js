@@ -121,3 +121,102 @@ const handleScroll = debounce(() => {
 }, 50);
 
 wrapper.addEventListener("scroll", handleScroll);
+
+// SCROLLER
+
+const scrollers = document.querySelectorAll(".scroller");
+
+if (!window.matchMedia("(prefers-reduce-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+
+    const scrollerInner = scroller.querySelector(".inner-scroller");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+// DIALOG and FORM
+
+function sanitizeInput(input) {
+  const tempDiv = document.createElement("div");
+  tempDiv.textContent = input;
+  return tempDiv.innerHTML;
+}
+
+const dialog = document.querySelector("dialog");
+const showDialog = document.querySelector(".napisz");
+const closeDialog = document.querySelector(".zamknij");
+const form = document.getElementById(".napisz-do-nas");
+
+showDialog.addEventListener("click", () => {
+  dialog.showModal();
+  showDialog.classList.toggle("closed");
+});
+
+closeDialog.addEventListener("click", () => {
+  dialog.close();
+  showDialog.classList.toggle("closed");
+  form.reset();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {};
+
+  formData.forEach((value, key) => {
+    const sanitizedValue = sanitizeInput(value);
+
+    if (data[key]) {
+      if (!Array.isArray(data[key])) {
+        data[key] = [data[key]];
+      }
+      data[key].push(sanitizedValue);
+    } else {
+      data[key] = sanitizedValue;
+    }
+  });
+
+  console.log("Form data:", data);
+
+  const dataJson = JSON.stringify(data);
+
+  console.log(dataJson);
+
+  fetch("/", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: dataJson,
+  })
+    .then(async (response) => {
+      console.log("Response status:", response.status);
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(
+          `Network response was not ok: ${response.statusText}, Message: ${errorMessage}`
+        );
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Success:", data);
+      alert("Formularz wysłany.");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
