@@ -142,7 +142,7 @@ form {
 
 input[type="text"],
 input[type="email"],
-input[type="tel"],
+input[type="number"],
 select,
 textarea {
   padding: 10px;
@@ -153,8 +153,22 @@ textarea {
   outline: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:user-valid {
+  border: 1px solid #33d90a;
+}
+
 textarea {
-  max-width: 600px;
+  max-width: 100%;
 }
 
 fieldset {
@@ -222,6 +236,10 @@ legend {
   margin-right: auto;
 }
 
+/* .buttonlist {
+  display: flex;
+} */
+
 .button-gal,
 .button {
   color: white;
@@ -232,6 +250,7 @@ legend {
   text-decoration: none;
   text-align: center;
   transition: scale 0.2s ease-in-out;
+  padding-bottom: 5px;
 }
 
 .button:hover {
@@ -243,9 +262,7 @@ legend {
 }
 
 .highlighted {
-  color: var(--color-main) !important;
-  text-shadow: 0 0 5px #d90a2c, /* Glow */ 0 0 10px #d90a2c, 0 0 15px #d90a2c,
-    0 0 20px #ff5d75, /* Outer Glow */ 0 0 30px #ff5d75, 0 0 40px #ff5d75;
+  border-bottom: 1px solid var(--color-main);
 }
 
 .facebook,
