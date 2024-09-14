@@ -62,33 +62,6 @@ createObservers();
 // sprawdzanie zmiany wysokości strony
 window.addEventListener("resize", createObservers);
 
-// NAPIS GŁÓWNY - pojawianie się tylko raz na początku
-
-document.addEventListener("DOMContentLoaded", function () {
-  const headline = document.querySelector(".headline");
-
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function onScroll() {
-    if (isInViewport(headline)) {
-      headline.classList.add("visible");
-      window.removeEventListener("scroll", onScroll);
-    }
-  }
-
-  window.addEventListener("scroll", onScroll);
-  onScroll();
-});
-
 // Chowanie headera
 
 const wrapper = document.querySelector(".wrapper");

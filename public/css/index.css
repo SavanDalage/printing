@@ -309,19 +309,26 @@ legend {
   color: white;
   letter-spacing: 20px;
   line-height: 1.2;
+  font-weight: 400;
 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.3),
     1px -1px 2px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3);
 
-  transform: scale(0.1);
-  opacity: 0;
-  transition: transform 1s ease-out, opacity 1s ease-out;
   text-align: center;
+
+  animation: visible 1s ease-out;
 }
 
-.headline.visible {
-  transform: scale(1);
-  opacity: 1;
+@keyframes visible {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ********************************* */
@@ -347,6 +354,10 @@ legend {
   color: white;
   font-size: 64px;
   padding: 100px 0 50px 0;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .uslugi-text {
@@ -354,6 +365,10 @@ legend {
   padding: 0 100px;
   font-size: 24px;
   line-height: 1.5;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .uslugi-rodzaje {
@@ -370,6 +385,18 @@ legend {
   display: flex;
   font-size: 18px;
   border: 1px solid var(--color-main);
+}
+
+.uslugi-left {
+  animation: appear-left linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.uslugi-right {
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .image-left {
@@ -486,6 +513,7 @@ li:hover {
   background-color: black;
   border-top: 1px solid var(--color-main);
   border-bottom: 1px solid var(--color-main);
+  /* clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0 100%); */
 }
 
 .kto-box {
@@ -504,6 +532,10 @@ li:hover {
   align-items: center;
   padding: 10px;
   margin-left: 10px;
+
+  animation: appear-left linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .kto-text {
@@ -511,6 +543,10 @@ li:hover {
   line-height: 1.5;
   padding: 20px;
   margin-right: 20px;
+
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .o-nas-mid {
@@ -559,6 +595,10 @@ li:hover {
   color: white !important;
   font-size: 64px;
   padding: 60px 0 50px 0;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .kontakt-box {
@@ -570,6 +610,10 @@ li:hover {
   align-items: center;
   padding-bottom: 40px;
   max-width: 800px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .kontakt-box-in {
@@ -599,6 +643,45 @@ li:hover {
   filter: invert(90%);
 }
 
+/*************************************/
+/*************** APPEAR **************/
+/*************************************/
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes appear-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear-right {
+  from {
+    opacity: 0;
+    transform: translateX(+50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /*************************************/
 /*************** MOBILE **************/
 /*************************************/
