@@ -119,6 +119,11 @@ dialog[open]::backdrop {
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
+  transition: all 1s;
+}
+
+.napisz:hover {
+  background-color: var(--color-main);
 }
 
 .form {
